@@ -6,12 +6,14 @@
   </head>
   <body>
     <div id="time"></div>
+    <div id="gists"></div>
     <script>
       document.getElementById('time').innerHTML = new Date()
       async function doit() {
-        const gists = await fetch('https://api.github.com/users/rmela/gists')
-        const json = await gists.json()
-        console.log( json.map( gist => ( { url: gist.url, description: gist.description } ) ) )
+        let gists = await fetch('https://api.github.com/users/rmela/gists')
+        gists = await gists.json()
+        gists = gists.map( gist => ( { url: gist.url, description: gist.description } ) )
+        document.getElementById('gists').innerHTML = JSON.stringify( gists, null, 4 )
       }
       doit()
     </script>
