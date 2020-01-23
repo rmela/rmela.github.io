@@ -10,7 +10,7 @@
       async function doit() {
         const gists = await fetch('https://api.github.com/users/rmela/gists')
         const json = await gists.json()
-        console.log( json )
+        console.log( json.map( gist => ( { url: gist.url, description: gist.description } ) ) )
       }
       doit()
     </script>
