@@ -21,7 +21,7 @@
       async function doit() {
         let gists = await fetch('https://api.github.com/users/rmela/gists')
         gists = await gists.json()
-        gists = gists.map( gist => ( { url: gist.url, description: gist.description } ) )
+        gists = gists.map( gist => ( { url: gist.html_url, description: gist.description } ) )
         document.getElementById('gists').innerHTML = JSON.stringify( gists, null, 4 )
       }
       doit()
