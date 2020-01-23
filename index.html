@@ -9,7 +9,7 @@
       document.getElementById('time').innerHTML = new Date()
       async function doit() {
         const gists = await fetch('https://api.github.com/users/rmela/gists')
-        console.log( gists )
+        console.log( gists.json() )
       }
       doit()
     </script>
