@@ -7,8 +7,11 @@
     <div id="time"></div>
     <script>
       document.getElementById('time').innerHTML = new Date()
-      const gists = await fetch('https://api.github.com/users/rmela/gists')
-      console.log( gists )
+      async function doit() {
+        const gists = await fetch('https://api.github.com/users/rmela/gists')
+        console.log( gists )
+      }
+      doit()
     </script>
     Hi
   </body>
