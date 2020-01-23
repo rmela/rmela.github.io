@@ -4,7 +4,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
+    <div id="time"></div>
     <script>
+      document.getElementById('time').innerHTML = new Date()
       const gists = await fetch('https://api.github.com/users/rmela/gists')
       console.log( gists )
     </script>
