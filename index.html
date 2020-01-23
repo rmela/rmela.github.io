@@ -5,10 +5,19 @@
     <link rel="stylesheet" href="css/styles.css" >
   </head>
   <body>
+    <div>
+      Soon-to be github page.  Settled on vue.js.  Learned that pages are now served directly from master, so
+      no special publish scripts are needed!.   GitHub hides package.json &amp;etc automagically.
+    </div>
     <div id="time"></div>
+    <div>Gists</div>
     <div id="gists" class="preformatted"></div>
+
     <script>
       document.getElementById('time').innerHTML = new Date()
+    </script>
+
+    <script>
       async function doit() {
         let gists = await fetch('https://api.github.com/users/rmela/gists')
         gists = await gists.json()
