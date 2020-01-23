@@ -1,8 +1,13 @@
 <html>
   <head>
     <title>Rob Mela</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
+    <script>
+      const gists = await fetch('https://api.github.com/users/rmela/gists')
+      console.log( gists )
+    </script>
     Hi
   </body>
 </html>
