@@ -5,29 +5,22 @@
     <link rel="stylesheet" href="css/styles.css" >
   </head>
   <body>
+
     <div>
-      Soon-to be github page.  Planning to use this for learning vue.js.
+      Soon-to-be personal github page
     </div>
-    <div>  Learned that GitHub pages pages are now served directly from master, so
-      no special publish scripts are needed!   GitHub appears to hide package.json &amp;etc automagically.
+
+    <div class="header">Gists</div>
+
+    <div id="app">
+      <div v-for="gist in gists">
+        <div><a v-bind:href="gist.url">{{gist.description}}</a></div>
+      </div>
     </div>
-    <div id="time"></div>
-    <div>Gists</div>
-    <div id="gists" class="preformatted"></div>
 
-    <script>
-      document.getElementById('time').innerHTML = new Date()
-    </script>
+    <div class="header">Repos</div>
 
-    <script>
-      async function doit() {
-        let gists = await fetch('https://api.github.com/users/rmela/gists')
-        gists = await gists.json()
-        gists = gists.map( gist => ( { url: gist.html_url, description: gist.description } ) )
-        document.getElementById('gists').innerHTML = JSON.stringify( gists, null, 4 )
-      }
-      doit()
-    </script>
-    Hi
+    <script src="js/app.js"></script>
+
   </body>
 </html>
