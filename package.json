@@ -1,0 +1,20 @@
+{
+  "name": "mbta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "keys": "openssl req -nodes -new -x509 -keyout key.pem -out cert.pem",
+    "start": "npx http-server --ssl -a 127.0.0.1 --port 8888"
+  },
+  "dependencies": {
+    "moment": ""
+  },
+  "devDependencies": {
+    "http-server": "",
+    "event-source": "https://github.com/launchdarkly/js-eventsource.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
